@@ -4,6 +4,7 @@ module immgen (
     input  [3:0]  inp,
     output [15:0] out
 );
-// The immgen module extends small immediates
-// from the instruction into a 16-bit value that the ALU can use.
+ assign imm_out = { {10{imm_in[5]}}, imm_in };
+
 endmodule
+
