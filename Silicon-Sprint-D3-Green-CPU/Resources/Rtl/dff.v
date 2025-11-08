@@ -7,7 +7,11 @@ module dff #(parameter WIDTH = 16) (
     input       [WIDTH-1:0] d,
     output reg  [WIDTH-1:0] q
 );
-// This module acts as a register - it captures the input 'd'
-// on each rising edge of 'clk' and outputs it as 'q'.
+always @(posedge clk or posedge reset) begin
+        if (reset)
+            q <= 16'b0;
+        else
+            q <= d;
 
 endmodule
+
