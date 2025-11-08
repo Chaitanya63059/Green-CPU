@@ -6,6 +6,6 @@ module mux2 #(parameter WIDTH = 16)(
     output [WIDTH-1:0] y
 );
 
-
+    assign y = (sel) ? d1 : d0;
 
 endmodule
