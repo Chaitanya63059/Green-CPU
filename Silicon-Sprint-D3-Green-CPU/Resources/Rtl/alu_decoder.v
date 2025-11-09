@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 module alu_decoder (
-    // Input from Main Control Unit (e.g., 2 bits)
+    // Input from Main Control Unit 
     input [1:0] ALUOp,     
     
     input [3:0] funct,     
@@ -9,7 +9,7 @@ module alu_decoder (
     output reg [3:0] alu_ctrl 
 );
     
-    // --- Define ALU Control signals (must match your alu.v) ---
+    // Define ALU Control signals (must match your alu.v)
     localparam ALU_ADD = 4'b0000;
     localparam ALU_SUB = 4'b0001;
     localparam ALU_SLT = 4'b0010;
@@ -19,7 +19,7 @@ module alu_decoder (
     localparam ALU_SLL = 4'b0110;
     localparam ALU_SRA = 4'b0111;
 
-    // --- Define ALUOp types from Main Control ---
+    // Define ALUOp types from Main Control
     localparam OP_MEMORY = 2'b00; // For LH, SH
     localparam OP_RTYPE  = 2'b10; // For R-Type instructions
 
@@ -60,3 +60,4 @@ module alu_decoder (
     end
 
 endmodule
+
