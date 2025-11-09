@@ -5,7 +5,8 @@ module mux3 #(parameter WIDTH = 16)(
     input       [1:0] sel,
     output      [15:0] y
 );
-
-
+    if(sel == 00) assign output = d0;
+    else if(sel == 01) assign output = d1;
+    else assign output = d2;
+        
 endmodule
-
